@@ -1,0 +1,58 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+	compatible = "rockchip,rockpi","rockchip,rk3399";
+
+	fragment@0 {
+		target = <&cluster0_opp>;
+
+		__overlay__ {
+			rockchip,bin-scaling-sel = <
+				0	12
+				1	12
+			>;
+			opp-1512000000 {
+				opp-hz = /bits/ 64 <1512000000>;
+				opp-microvolt = <1150000 1150000 1200000>;
+				clock-latency-ns = <40000>;
+			};
+			opp-1608000000 {
+				opp-hz = /bits/ 64 <1608000000>;
+				opp-microvolt    = <1175000 1175000 1200000>;
+				clock-latency-ns = <40000>;
+			};
+			opp-1704000000 {
+				opp-hz = /bits/ 64 <1704000000>;
+				opp-microvolt    = <1300000 1300000 1300000>;
+				clock-latency-ns = <40000>;
+			};
+ 		};
+	};
+
+	fragment@1 {
+		target = <&cluster1_opp>;
+
+		__overlay__ {
+			rockchip,bin-scaling-sel = <
+				0	1
+				1	1
+			>;
+			opp-1992000000 {
+				opp-hz = /bits/ 64 <1992000000>;
+				opp-microvolt = <1250000 1250000 1250000>;
+				clock-latency-ns = <40000>;
+			};
+			opp-2088000000 {
+				opp-hz = /bits/ 64 <2088000000>;
+					opp-microvolt    = <1300000 1300000 1300000>;
+					cloc-latency-ns = <40000>;
+			};
+			opp-2184000000 {
+				opp-hz = /bits/ 64 <2184000000>;
+				opp-microvolt    = <1350000 1350000 1350000>;
+				clock-latency-ns = <40000>;
+			};
+		};
+	};
+};
